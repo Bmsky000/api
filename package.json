@@ -1,17 +1,25 @@
 {
-  "name": "render",
+  "name": "neoxr-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Base Rest Api",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neoxr/rest-api-web.git"
+  },
+  "keywords": [
+    "rest-api",
+    "web-api"
+  ],
+  "author": "Wildan Izzudin",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.1",
+  "bugs": {
+    "url": "https://github.com/neoxr/rest-api-web/issues"
   },
+  "homepage": "https://github.com/neoxr/rest-api-web#readme",
   "dependencies": {
     "@google/generative-ai": "*",
     "axios": "*",

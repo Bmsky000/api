@@ -4,25 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm install"
+    "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/neoxr/rest-api-web.git"
-  },
-  "keywords": [
-    "rest-api",
-    "web-api"
-  ],
-  "author": "Wildan Izzudin",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
   },
-  "bugs": {
-    "url": "https://github.com/neoxr/rest-api-web/issues"
-  },
-  "homepage": "https://github.com/neoxr/rest-api-web#readme",
   "dependencies": {
     "@google/generative-ai": "*",
     "axios": "*",

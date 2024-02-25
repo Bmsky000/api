@@ -1,63 +1,11 @@
-let express = require('express'), path = require('path'), cookieParser = require('cookie-parser'), logger = require('morgan')
-let indexRouter = require('./routes/index'), apiRouter = require('./routes/api')
-let PORT = process.env.PORT || 8080
+const express = require("express");
 
-global.creator = 'BimaSky'
-global.apikey = [ 'bimasky' ] // ApiKey
-global.status = {
-  text: {
-    creator: global.creator,
-    status: false,
-    msg: 'Input \'text\' parameter'
-    },
-  link: {
-    creator: global.creator,
-    status: false,
-    msg: 'Input \'link\' parameter'
-    },
-	query: {
-        creator: global.creator,
-	status: false,
-        msg: 'Missing \'q\' parameter!'
-    },
-    url: {
-        creator: global.creator,
-	status: false,
-	msg: 'Missing \'url\' parameter!'
-    },
-    apikey: {
-        creator: global.creator,
-	status: false,
-	msg: 'Missing \'apikey\' parameter!'
-    },
-    invalidKey: {
-        creator: global.creator,
-        status: false,
-        msg: 'ApiKey is invalid!'
-    },
-    invalidURL: {
-        creator: global.creator,
-        status: false,
-        msg: 'URL is invalid'
-    },
-    error: {
-        status: false,
-        creator: global.creator,
-        msg: 'Page Not Found!'
-    }
-}
+const app = express();
 
-const app = express()
-app.set('json spaces', 2)
-app.use(logger('dev'))
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
-app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'public')))
-app.use('/', indexRouter)
-app.use('/api', apiRouter)
-app.get('*', function(req, res){
-    res.status(404).json(global.status.error)
-})
+const port = process.env.PORT || 3000;
 
-app.listen(PORT, () => console.log(`Server is running in port ${PORT}`))
+app.get("/", (req, res) => res.send("Hello world"));
+app.get("/ping", (req, res) => res.send("Pong"));
+app.get("/felix", (req, res) => res.send("Liawi"));
+
+app.listen(port, () => console.log(`Server is listening on port ${port}`));
